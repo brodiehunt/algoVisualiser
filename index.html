@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm visualiser</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="header-container">
+      <h1 class="page-title">Algorithm Visualiser</h1>
+      <div class="algorithm-options">
+        <div class="input-container">
+          <select class="select alogirthm" id="select_algorithm">
+            
+              <option class="select-option" selected="selected" value="alg1">Algorithm_1</option>
+              <option class="select-option" value="alg2">Algorithm_2</option>
+              <option class="select-option" value="alg3">Algorithm_3</option>
+              <option class="select-option" value="alg4">Algorithm_4</option>
+              <option class="select-option" value="alg5">Algorithm_5</option>
+              <option class="select-option" value="alg6">Algorithm_6</option>
+           
+          </select>
+          <select class="select bars" id="select_bars">
+            <option class="select-option" value="10">10</option>
+            <option class="select-option" selected="selected" value="50">50</option>
+            <option class="select-option" value="100">100</option>
+            <option class="select-option" value="200">200</option>
+            <option class="select-option" value="400">400</option>
+          </select>
+          <select class="select speed" id="select_speed">
+            <option class="select-option" value="500">Very slow</option>
+            <option class="select-option" selected="selected" value="100">Slow</option>
+            <option class="select-option" value="50">Normal</option>
+            <option class="select-option" value="20">Fast</option>
+          </select>
+        </div>
+        <a href="#" class="btn pathfinding-btn" id="path_finding_btn">Pathfinding Algorithms</a>
+      </div>
+    </div>
+
+    <div class="visualiser-container">
+      <div class="visualiser" id="visualiser">
+
+      </div>
+      <div class="buttons-container">
+        <button class="start-algorithm-btn btn" id="start_algorithm_btn">Start Algorithm</button>
+        <button class="generate-array-btn btn" id="generate_array_btn">Generate new array</button>
+      </div>
+      
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>`
