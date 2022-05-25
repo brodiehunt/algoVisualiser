@@ -29,7 +29,7 @@ barsSelect.addEventListener('change', () => {
 
 startAlgorithmBtn.addEventListener('click', () => {
   
-  bubbleSort();
+  quickSort(divsHeight, 0, divsHeight.length -1);
 })
 
 generateArrayBtn.addEventListener('click', ()=> {
@@ -58,6 +58,66 @@ function renderBars() {
   }
   divsArray = [...document.querySelectorAll('.bar')];
   
+}
+
+
+function quickSort(array, start, end) {
+  let pivotValue =  array[end];
+  let pivotIndex = start;
+  console.log(start, end)
+  for ( let i = start; i < end; i++) {
+    
+    if (array[i] < pivotValue) {
+      let temp = array[i];
+      array[i] = array[pivotIndex];
+      array[pivotIndex] = temp;
+      transformDiv(divsArray[i], array[i], divsArray[pivotIndex], array[pivotIndex])
+      pivotIndex+=1
+      
+      
+    }
+  }
+  let pivotTemp = array[pivotIndex];
+  array[pivotIndex] = array[end];
+  array[end] = pivotTemp;
+  transformDiv(divsArray[pivotIndex], array[pivotIndex], divsArray[end], array[end])
+  if ((pivotIndex - start > 0) && (end - pivotIndex > 0)) {
+    
+    quickSort(array, start, pivotIndex -1);
+    quickSort(array, pivotIndex +1, end)
+  } else if (pivotIndex - start > 0) {
+    
+    quickSort(array, start, pivotIndex -1)
+  } else if (end - pivotIndex > 1) {
+    
+    quickSort(array, pivotIndex + 1, end)
+  }
+ 
+}
+
+function insertionSort() {
+  let i, x, temp;
+  for (i=0; i < divsHeight.length; i++ ) {
+    
+    if (divsHeight[i] > divsHeight[i + 1]) {
+      transformColor(divsArray[i], divsArray[i+1], "green")
+      temp = divsHeight[i];
+      divsHeight[i] = divsHeight[i+1];
+      divsHeight[i+1] = temp;
+      transformDiv(divsArray[i], divsHeight[i], divsArray[i+1], divsHeight[i+1])
+      transformColor(divsArray[i], divsArray[i+1], "purple")
+      for ( x = i; x > 0; x--) {
+        if (divsHeight[x] < divsHeight[x-1]) {
+          temp = divsHeight[x];
+          divsHeight[x] = divsHeight[x-1];
+          divsHeight[x-1] = temp;
+          transformDiv(divsArray[x], divsHeight[x], divsArray[x-1], divsHeight[x-1])
+        } else {
+          break;
+        }
+      }
+    }
+  }
 }
 
 
