@@ -21,26 +21,47 @@ let arraySize = parseInt(barsSelect.value),
  
 generateArrayOfBars()
 
+algorithmSelect.addEventListener('change', (event) => {
+  currentAlgorithm = event.target.value;
+})
 
-barsSelect.addEventListener('change', () => {
+barsSelect.addEventListener('change', (event) => {
+  console.log("triggeredChange")
+  arraySize = parseInt(event.target.value);
   generateArrayOfBars()
 })
 
 speedSelect.addEventListener('change', (event) => {
+  console.log("triggered change");
   timeDelay = parseInt(event.target.value);
-})
-
-
-startAlgorithmBtn.addEventListener('click', () => {
-  // bubbleSort()
-  console.log(mergeSort({arr: divsHeight, startIndex: 0, endIndex: divsHeight.length -1}));
-  // quickSort(divsHeight, 0, divsHeight.length -1)
-  // quickSort(divsHeight, 0, divsHeight.length -1, divsArray, transformDiv);
 })
 
 generateArrayBtn.addEventListener('click', ()=> {
   generateArrayOfBars()
 })
+
+
+startAlgorithmBtn.addEventListener('click', () => {
+  switch (currentAlgorithm) {
+    case "merge":
+      mergeSort({arr: divsHeight, startIndex: 0, endIndex: divsHeight.length -1});
+      break;
+    case "quick":
+      quickSort(divsHeight, 0, divsHeight.length -1);
+      break;
+    case "insertion":
+      insertionSort();
+      break;
+    case "bubble":
+      bubbleSort();
+      break;
+    default:
+      mergeSort({arr: divsHeight, startIndex: 0, endIndex: divsHeight.length -1});
+  }
+  
+})
+
+
 
 function resetGlobalVariables() {
   timeDelay = parseInt(speedSelect.value);

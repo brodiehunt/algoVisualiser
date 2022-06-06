@@ -6,6 +6,9 @@
     <title>Algorithm visualiser</title>
 
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="select.css">
+    <script src="js/selectScript.js" type="module"></script>
+    
     
   </head>
   <body>
@@ -13,28 +16,24 @@
       <h1 class="page-title">Algorithm Visualiser</h1>
       <div class="algorithm-options">
         <div class="input-container">
-          <select class="select alogirthm" id="select_algorithm">
-            
-              <option class="select-option" selected="selected" value="alg1">Algorithm_1</option>
-              <option class="select-option" value="alg2">Algorithm_2</option>
-              <option class="select-option" value="alg3">Algorithm_3</option>
-              <option class="select-option" value="alg4">Algorithm_4</option>
-              <option class="select-option" value="alg5">Algorithm_5</option>
-              <option class="select-option" value="alg6">Algorithm_6</option>
-           
+          <select class="select alogirthm" id="select_algorithm" data-custom>
+              <option class="select-option" selected="selected" value="merge">Merge sort</option>
+              <option class="select-option" value="quick">Quick sort</option>
+              <option class="select-option" value="insertion">Insertion sort</option>
+              <option class="select-option" value="bubble">Bubble sort</option>
           </select>
-          <select class="select bars" id="select_bars">
+          <select class="select bars" id="select_bars" data-custom>
             <option class="select-option" value="10">10</option>
             <option class="select-option" selected="selected" value="50">50</option>
             <option class="select-option" value="100">100</option>
             <option class="select-option" value="200">200</option>
             <option class="select-option" value="400">400</option>
           </select>
-          <select class="select speed" id="select_speed">
-            <option class="select-option" value="500">Very slow</option>
+          <select class="select speed" id="select_speed" data-custom>
             <option class="select-option" selected="selected" value="100">Slow</option>
             <option class="select-option" value="50">Normal</option>
             <option class="select-option" value="20">Fast</option>
+            <option class="select-option" value="10">Very Fast</option>
           </select>
         </div>
         <a href="#" class="btn pathfinding-btn" id="path_finding_btn">Pathfinding Algorithms</a>
@@ -51,7 +50,7 @@
       </div>
       
     </div>
-    <script src="js/main.js" ></script>
+    <script src="js/main.js"></script>
     <script src="js/sortingAlgorithms/bubbleSort.js"></script>
     <script src="js/sortingAlgorithms/quickSort.js"></script>
     <script src="js/sortingAlgorithms/mergeSort.js"></script>
