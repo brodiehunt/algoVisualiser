@@ -20,7 +20,7 @@ let currentAlgorithm = algorithmSelect.value;
 function generateArrayOfBars() {
     resetGlobalVariables();
     for (let i = 0; i < arraySize; i++) {
-        eateNewBar();
+        createNewBar();
     }
     divsArray = [...document.querySelectorAll('.bar')];
 }
